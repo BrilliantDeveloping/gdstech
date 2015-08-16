@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+        <span class="glyphicon glyphicon-th"></span> Brilliant Developing
+      </a>
+    </div>
+    <div>
+      <ul ng-repeat="nav in vm.navigation | orderBy:'-order'" 
+          class="nav navbar-nav navbar-right">
+        <li ui-sref-active="active">
+          <a ui-sref="{{nav.state}}">{{nav.link}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

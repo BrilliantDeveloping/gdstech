@@ -1,0 +1,21 @@
+div.nav {
+  border-bottom:3px solid $brand-primary;
+  margin-bottom:5px;
+  background:rgba(255,255,255,0.5);
+}
+.navbar {
+  margin:0 -15px;
+}
+
+/** Bootstrap Variables **/
+
+// Basics of a navbar
+$navbar-height:                    70px;
+$navbar-default-color:             $brand-primary;
+$navbar-default-bg:                transparent;
+$navbar-default-border:            transparent;
+
+// Navbar links
+$navbar-default-link-color:        $brand-primary;
+$navbar-default-link-hover-color:  darken($brand-primary, 20%);
+$navbar-default-link-hover-bg:     transparent;
