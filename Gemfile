@@ -9,7 +9,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
 gem 'bower-rails'
 gem 'angular-rails-templates'
-gem 'listen'
+gem 'devise_token_auth', '~> 0.1.34'
+gem 'omniauth'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :test, :development do

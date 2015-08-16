@@ -1,6 +1,7 @@
 angular.module 'skeleton', [
   'templates',
-  'ui.router'
+  'ui.router',
+  'ng-token-auth'
 ]
 
 angular.module "skeleton"
