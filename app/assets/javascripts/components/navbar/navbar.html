@@ -1,15 +1,31 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand">
-        <span class="glyphicon glyphicon-th"></span> Brilliant Developing
+      <a ui-sref="main" class="navbar-brand">
+        <span class="glyphicon glyphicon-th"></span> Skeleton
       </a>
     </div>
     <div>
-      <ul ng-repeat="nav in vm.navigation | orderBy:'-order'" 
-          class="nav navbar-nav navbar-right">
-        <li ui-sref-active="active">
-          <a ui-sref="{{nav.state}}">{{nav.link}}</a>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-repeat="nav in vm.neutralNav | orderBy:'order'" 
+            ui-sref-active="active">
+          <a ui-sref="{{nav.state}}">
+            {{nav.link}}
+          </a>
+        </li>
+        <li ng-repeat="nav in vm.authedNav | orderBy:'order'"
+            ng-if="user.signedIn" 
+            ui-sref-active="active">
+          <a ui-sref="{{nav.state}}">
+            {{nav.link}}
+          </a>
+        </li>
+        <li ng-repeat="nav in vm.unauthedNav | orderBy:'order'" 
+            ng-if="!user.signedIn"
+            ui-sref-active="active">
+          <a ui-sref="{{nav.state}}">
+            {{nav.link}}
+          </a>
         </li>
       </ul>
     </div>

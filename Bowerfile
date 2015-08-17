@@ -1,4 +1,5 @@
 asset 'angular'
 asset 'angular-ui-router'
 asset 'ng-token-auth'
+asset 'angular-flash-alert'
 asset 'bootstrap-sass'

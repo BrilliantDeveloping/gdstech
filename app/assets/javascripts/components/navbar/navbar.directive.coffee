@@ -1,26 +1,41 @@
 angular.module "skeleton"
   .directive 'navbar', ->
 
-    NavbarController = () ->
+    NavbarController = ($auth) ->
       vm = this
-      # "vm.creation" is avaible by directive option "bindToController: true"
-      vm.navigation  = [
+      vm.neutralNav  = [
         {
-          'link':'Link 1'
-          'state':'main'
-          'order':1
-        },
+          link: 'Link1'
+          state: 'main'
+          order: 1
+        } 
+      ]
+      # For users signed in
+      vm.authedNav = [
         {
-          'link':'Link 2'
-          'state':'main'
-          'order':2
-        },
+          link: 'Link2'
+          state: 'main'
+          order: 2
+        }
         {
-          'link':'Link 3'
-          'state':'main'
-          'order':3
+          link: 'Logout'
+          state: 'logout'
+          order: 3
         }
       ]
+      # For users not signed in
+      vm.unauthedNav = [
+        {
+          link: 'Login'
+          state: 'login'
+          order: 2
+        }
+        {
+          link: 'Register'
+          state: 'register'
+          order: 3
+        }
+      ]  
       return
 
     directive =
