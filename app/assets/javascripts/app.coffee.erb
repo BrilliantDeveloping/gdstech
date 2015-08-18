@@ -10,16 +10,16 @@ angular.module "skeleton"
     $stateProvider
       .state "main",
         url: "/"
-        templateUrl: 'assets/main/main.html'
+        templateUrl: "<%= asset_path 'main/main.html' %>"
         
       .state "login",
         url: "/login"
-        templateUrl: 'assets/auth/login.html'
+        templateUrl: "<%= asset_path 'auth/login.html' %>"
         controller: 'AuthCtrl'
         
       .state "register",
         url: "/register"
-        templateUrl: 'assets/auth/register.html'
+        templateUrl: "<%= asset_path 'auth/register.html' %>"
         controller: 'AuthCtrl'
               
       .state "logout",

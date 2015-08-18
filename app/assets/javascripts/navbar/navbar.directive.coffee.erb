@@ -40,7 +40,7 @@ angular.module "skeleton"
 
     directive =
       restrict: 'E'
-      templateUrl: 'assets/components/navbar/navbar.html'
+      templateUrl: "<%= asset_path 'navbar/navbar.html' %>"
       controller: NavbarController
       controllerAs: 'vm'
       bindToController: true
