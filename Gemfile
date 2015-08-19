@@ -19,6 +19,8 @@ gem 'omniauth'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'ffaker'
+
 group :test, :development do
   gem 'sqlite3'
   gem 'byebug'

@@ -5,6 +5,7 @@
     "angular-ui-router": "latest",
     "ng-token-auth": "latest",
     "angular-flash-alert": "latest",
-    "bootstrap-sass": "latest"
+    "bootstrap-sass": "latest",
+    "angularjs-rails-resource": "~> 2.0.0"
   }
 }

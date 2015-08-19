@@ -2,7 +2,8 @@ angular.module "skeleton", [
   'templates',
   'ui.router',
   'ng-token-auth',
-  'flash'
+  'flash',
+  'rails'
 ]
 
 angular.module "skeleton"
@@ -27,6 +28,11 @@ angular.module "skeleton"
         templateProvider: ($auth, $state) ->
           if $auth.userIsAuthenticated()
             $auth.signOut()
+
+      .state "posts",
+        url: "/posts"
+        templateUrl: "<%= asset_path 'posts/posts.html' %>"
+        controller: 'PostsCtrl'
             
       # redirect invalid url routes to root
       $urlRouterProvider.otherwise '/'
@@ -51,6 +57,9 @@ angular.module "skeleton"
       Flash.create('danger', reason.errors[0])
       
       
+  .factory "Post", (RailsResource) ->
+    class Post extends RailsResource
+      @configure url: "/api/posts", name: "post"
       
       
       

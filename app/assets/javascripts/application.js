@@ -5,4 +5,5 @@
 //= require angular-cookie/angular-cookie
 //= require ng-token-auth/dist/ng-token-auth
 //= require angular-flash-alert/dist/angular-flash
+//= require angularjs-rails-resource/angularjs-rails-resource
 //= require_tree .
