@@ -33,6 +33,6 @@
     "commit": "240466ab737d69b2c7fb63850c6c1f35b12833c5"
   },
   "_source": "git://github.com/FineLinePrototyping/dist-angularjs-rails-resource.git",
-  "_target": "~> 2.0.0",
+  "_target": "2.0.0",
   "_originalSource": "angularjs-rails-resource"
 }

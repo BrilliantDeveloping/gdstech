@@ -3,28 +3,31 @@ angular.module "skeleton"
 
     NavbarController = ($auth) ->
       vm = this
-      vm.neutralNav  = [
+      vm.neutral = [
         {
           link: 'Posts'
           state: 'posts'
           order: 1
-        } 
+        }
       ]
+
       # For users signed in
-      vm.authedNav = [
+      vm.authorized = [
         {
-          link: 'Link2'
+          link: 'SomeLink'
           state: 'main'
+          icon: 'format-list-bulleted'
           order: 2
         }
         {
           link: 'Logout'
           state: 'logout'
+          icon: 'sign-in'
           order: 3
         }
       ]
       # For users not signed in
-      vm.unauthedNav = [
+      vm.unauthorized = [
         {
           link: 'Login'
           state: 'login'
@@ -35,7 +38,7 @@ angular.module "skeleton"
           state: 'register'
           order: 3
         }
-      ]  
+      ]
       return
 
     directive =

@@ -1,11 +1,17 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "angular": "latest",
-    "angular-ui-router": "latest",
-    "ng-token-auth": "latest",
+    "angular": "1.4.4",
+    "angular-animate": "latest",
+    "angular-cookies": "latest",
+    "angular-touch": "latest",
+    "angular-sanitize": "latest",
+    "jquery": "2.1.4",
+    "angular-ui-router": "0.2.15",
+    "ng-token-auth": "0.0.28",
     "angular-flash-alert": "latest",
-    "bootstrap-sass": "latest",
-    "angularjs-rails-resource": "~> 2.0.0"
+    "angular-material": "0.10.1",
+    "material-design-iconic-font": "2.1.2",
+    "angularjs-rails-resource": "2.0.0"
   }
 }

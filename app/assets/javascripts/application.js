@@ -1,5 +1,10 @@
 //= require jquery
 //= require angular/angular
+//= require angular-animate/angular-animate
+//= require angular-aria/angular-aria
+//= require angular-touch/angular-touch
+//= require angular-sanitize/angular-sanitize
+//= require angular-material
 //= require angular-rails-templates
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-cookie/angular-cookie
