@@ -1,23 +1,33 @@
-<form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email"
-           name="email"
-           id="email"
-           ng-model="loginForm.email"
-           required="required"
-           class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password"
-           name="password"
-           id="password"
-           ng-model="loginForm.password"
-           required="required"
-           class="form-control">
-  </div>
-
-  <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
-</form>
+<md-card>
+  <md-card-content>
+    <div class="auth-form">
+      <h1>Sign into your account</h1>
+      <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+        <md-input-container md-no-float>
+          <input type="email"
+                 name="email"
+                 id="email"
+                 ng-model="loginForm.email"
+                 placeholder="Email Address"/>
+        </md-input-container>
+        <md-input-container md-no-float="">
+          <input type="password"
+                 name="password"
+                 id="password"
+                 ng-model="loginForm.password"
+                 placeholder="Password"/>
+        </md-input-container>
+        <md-input-container md-no-float="">
+          <md-button type="submit" class="block md-raised md-primary">Sign In</md-button>
+        </md-input-container>
+      </form>
+    </div>
+  </md-card-content>
+</md-card>
+<br/>
+<md-card class="other-links">
+  <md-card-content layout="row" layout-align="center center">
+    <a flex href="" ui-sref="register">Not registered yet?</a>
+    <a flex href="" ui-sref="register">Forgot password?</a>
+  </md-card-content>
+</md-card>

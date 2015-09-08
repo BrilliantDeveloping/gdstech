@@ -1,3 +1,2 @@
-Hi
-
-<div ng-bind="user.signedIn"></div>
+<a ng-show="user.signedIn">Hi {{user.email}}</a>
+<a ng-hide="user.signedIn">Please sign in</a>

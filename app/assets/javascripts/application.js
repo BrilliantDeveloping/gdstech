@@ -1,14 +1,13 @@
 //= require jquery
 //= require angular/angular
+//= require angular-material/angular-material
 //= require angular-animate/angular-animate
 //= require angular-aria/angular-aria
 //= require angular-touch/angular-touch
 //= require angular-sanitize/angular-sanitize
-//= require angular-material
 //= require angular-rails-templates
 //= require angular-ui-router/release/angular-ui-router
 //= require angular-cookie/angular-cookie
 //= require ng-token-auth/dist/ng-token-auth
-//= require angular-flash-alert/dist/angular-flash
 //= require angularjs-rails-resource/angularjs-rails-resource
 //= require_tree .

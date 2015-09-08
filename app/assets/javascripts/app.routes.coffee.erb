@@ -1,0 +1,41 @@
+angular.module "skeleton"
+  .config ($stateProvider, $urlRouterProvider) ->
+    
+    authenticateRoute = ($auth, $state) ->
+      $auth.validateUser().catch (res) ->
+        $state.go 'main'
+        return
+      
+    $stateProvider
+      .state "main",
+        url: "/"
+        templateUrl: "<%= asset_path 'main/main.html' %>"
+        
+      .state "login",
+        url: "/login"
+        templateUrl: "<%= asset_path 'auth/login.html' %>"
+        controller: 'AuthCtrl'
+        
+      .state "register",
+        url: "/register"
+        templateUrl: "<%= asset_path 'auth/register.html' %>"
+        controller: 'AuthCtrl'
+              
+      .state "logout",
+        url: "/logout"
+        templateProvider: ($auth, $state) ->
+          $auth.signOut().then((resp) ->
+            return
+          ).catch (resp) ->
+            return
+          return
+        resolve: auth: authenticateRoute
+
+      .state "posts",
+        url: "/posts"
+        templateUrl: "<%= asset_path 'posts/posts.html' %>"
+        controller: 'PostsCtrl'
+        # resolve: auth: authenticateRoute
+            
+      # redirect invalid url routes to root
+      $urlRouterProvider.otherwise '/'

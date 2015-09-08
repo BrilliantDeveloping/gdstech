@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Skeleton</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
@@ -9,7 +10,6 @@
   <div layout="column" layout-fill>
     <div><navbar/></div>
     <md-content>
-      <div flash-message="5000"></div>
       <div ui-view></div> 
     </md-content>
   </div>

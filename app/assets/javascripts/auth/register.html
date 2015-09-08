@@ -1,33 +1,39 @@
-<form ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email"
-           name="email"
-           id="email"
-           ng-model="registrationForm.email"
-           required="required"
-           class="form-control">
+<md-card>
+  <md-card-content>
+  <h1>Sign up now, it's free</h1>
+  <div flex class="auth-form">
+    <form ng-submit="register()" role="form" ng-init="registrationForm = {}" ng-controller="AuthCtrl">
+      <md-input-container md-no-float>
+        <input type="email"
+               name="email"
+               id="email"
+               ng-model="registrationForm.email"
+               placeholder="Email Address"/>
+      </md-input-container>
+      <md-input-container md-no-float="">
+        <input type="password"
+               name="password"
+               id="password"
+               ng-model="registrationForm.password"
+               placeholder="Choose Password"/>
+      </md-input-container>
+      <md-input-container md-no-float="">
+        <input type="password"
+               name="password_confirmation"
+               id="password_confirmation"
+               ng-model="registrationForm.password_confirmation"
+               placeholder="Confirm Password"/>
+      </md-input-container>
+      <md-input-container md-no-float="">
+        <md-button type="submit" class="block md-raised md-primary">Sign Up</md-button>
+      </md-input-container>
+    </form>
   </div>
-
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password"
-           name="password"
-           id="password"
-           ng-model="registrationForm.password"
-           required="required"
-           class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label for="password_confirmation">Password confirmation</label>
-    <input type="password"
-           name="password_confirmation"
-           id="password_confirmation"
-           ng-model="registrationForm.password_confirmation"
-           required="required"
-           class="form-control">
-  </div>
-
-  <button type="submit" class="btn btn-primary btn-lg">Register</button>
-</form>
+  </md-card-content>
+</md-card>
+<br/>
+<md-card class="other-links">
+  <md-card-content layout="row" layout-align="center center">
+    <a flex href="" ui-sref="login">Already registered? Sign in!</a>
+  </md-card-content>
+</md-card>

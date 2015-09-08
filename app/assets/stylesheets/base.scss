@@ -1,0 +1,69 @@
+html {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+md-content {
+  margin-top:20px;
+}
+
+h1,h2,h3,h4 {
+  font-weight:200!important;
+}
+
+a {
+  &:link, &:active, &:visited {
+    text-decoration:none;
+    outline:0;
+  }
+  &:hover, &:focus {
+    outline:0;
+  }
+}
+
+input::-moz-focus-inner { 
+  border: 0; 
+}
+
+hr {
+  border:0; height:1px; margin:0 15px;
+  background-image: 
+    linear-gradient(to right, 
+    rgba(100, 100, 100, 0.1), 
+    rgba(100, 100, 100, 0.2), 
+    rgba(10, 10, 10, 0.1));
+}
+
+[layout=row] {
+  flex-direction: row;
+}
+
+button.md-button {
+  box-shadow:none!important;
+  margin-left:0px;
+}
+
+.md-button.md-default-theme {
+  &.md-primary, &.md-primary a:hover {
+  }
+  &.block {
+    width:100%;
+    line-height:50px;
+    font-weight:bold;
+  }
+  &.outline {
+    border:1px solid #ddd;
+  }
+  &.hollow {
+    border:2px solid #ccc;
+    text-transform:none;
+    padding:10px 12px 12px 10px;
+    &:hover {
+      background:white;
+    }
+  }
+}
+
+md-icon {
+  position:relative;
+  top:-2px;
+}
