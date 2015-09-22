@@ -1,10 +1,14 @@
 ## GENERATE DUMMY DATA
 
-15.times do
+10.times do
   Post.create(
     title: FFaker::Lorem.sentence,
     content: FFaker::Lorem.paragraph,
     user_id: rand(1..3)
+  )
+  Product.create(
+    name: FFaker::Product.product_name,
+    price: rand(50..300)
   )
 end
 

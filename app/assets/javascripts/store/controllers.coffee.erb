@@ -1,0 +1,70 @@
+Stripe.setPublishableKey("<%= Figaro.env.stripe_publishable_key %>")
+
+angular.module "skeleton"
+  .controller "StoreCtrl", ($scope, Product, $mdDialog) ->
+    Product.query().then (products) -> $scope.products = products
+    
+    $scope.cart = []
+
+    $scope.addToCart = (product) ->
+      found = false
+      $scope.cart.forEach (item) ->
+        if item.id == product.id
+          item.quantity++
+          found = true
+        return
+      if !found
+        $scope.cart.push angular.extend({ quantity: 1 }, product)
+      return
+
+    $scope.getCartPrice = ->
+      total = 0
+      $scope.cart.forEach (product) ->
+        total += product.price * product.quantity
+        return
+      total
+
+    $scope.checkout = ->
+      $mdDialog.show
+        templateUrl: "<%= asset_path 'store/checkout.html' %>"
+        controller: 'CheckoutCtrl'
+        resolve: totalAmount: $scope.getCartPrice
+      return
+
+    return
+
+  .controller 'CheckoutCtrl', ($scope, $state, totalAmount, $mdDialog, $http, $filter) ->
+    $scope.totalAmount = totalAmount
+    
+    $scope.cancel = () ->
+      $mdDialog.cancel()
+      
+    $scope.onSubmit = ->
+      $scope.processing = true
+      return
+
+    $scope.stripeCallback = (status, response) ->
+      $scope.processing = false
+      $scope.hideAlerts()
+      if response.error
+        $scope.stripeError = response.error.message
+      else
+        data =
+          last4: response.card.last4
+          token: response.id
+          total: totalAmount*100
+        # send to api
+        $http.post('/api/v1/charge', data).success((response) ->
+          if response.paid == true
+            alert "You were charged "+$filter("currency")(response.amount / 100)
+            $mdDialog.cancel()
+            $state.go 'main'
+          )
+      return
+
+    $scope.hideAlerts = ->
+      $scope.stripeError = null
+      $scope.stripeToken = null
+      return
+
+    return

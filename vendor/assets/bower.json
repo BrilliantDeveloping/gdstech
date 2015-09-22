@@ -10,6 +10,7 @@
     "angular-ui-router": "0.2.15",
     "ng-token-auth": "0.0.28",
     "angular-material": "0.10.1",
-    "angularjs-rails-resource": "2.0.0"
+    "angularjs-rails-resource": "2.0.0",
+    "angular-payments": "latest"
   }
 }

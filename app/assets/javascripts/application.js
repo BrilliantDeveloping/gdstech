@@ -10,4 +10,5 @@
 //= require angular-cookie/angular-cookie
 //= require ng-token-auth/dist/ng-token-auth
 //= require angularjs-rails-resource/angularjs-rails-resource
+//= require angular-payments/lib/angular-payments
 //= require_tree .

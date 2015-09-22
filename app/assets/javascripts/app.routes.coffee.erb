@@ -36,6 +36,13 @@ angular.module "skeleton"
         templateUrl: "<%= asset_path 'posts/posts.html' %>"
         controller: 'PostsCtrl'
         # resolve: auth: authenticateRoute
+        
+      .state "store",
+        url: "/store"
+        templateUrl: "<%= asset_path 'store/store.html' %>"
+        controller: 'StoreCtrl'
+        resolve: auth: authenticateRoute
             
       # redirect invalid url routes to root
       $urlRouterProvider.otherwise '/'
+ 

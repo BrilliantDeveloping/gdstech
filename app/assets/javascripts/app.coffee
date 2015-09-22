@@ -7,4 +7,5 @@ angular.module "skeleton", [
   'rails'
   'templates'
   'ng-token-auth'
+  'angularPayments'
 ]

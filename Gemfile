@@ -19,6 +19,9 @@ gem 'angular-rails-templates'
 
 gem 'devise_token_auth', '~> 0.1.34'
 gem 'omniauth'
+gem 'stripe', git: 'https://github.com/stripe/stripe-ruby'
+
+gem 'figaro'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
