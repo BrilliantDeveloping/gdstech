@@ -1,5 +1,6 @@
 //= require jquery
 //= require angular/angular
+//= require ng-rails-csrf
 //= require angular-material/angular-material
 //= require angular-animate/angular-animate
 //= require angular-aria/angular-aria

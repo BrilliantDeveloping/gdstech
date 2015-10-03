@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
 gem 'bower-rails'
 gem 'angular-rails-templates'
+gem 'ng-rails-csrf'
 
 gem 'devise_token_auth', '~> 0.1.34'
 gem 'omniauth'

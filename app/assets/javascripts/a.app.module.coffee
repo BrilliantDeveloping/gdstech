@@ -1,4 +1,5 @@
 angular.module "skeleton", [
+  'ng-rails-csrf'
   'ngAnimate'
   'ngTouch'
   'ngSanitize'
