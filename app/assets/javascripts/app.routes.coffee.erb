@@ -42,7 +42,34 @@ angular.module "skeleton"
         templateUrl: "<%= asset_path 'store/store.html' %>"
         controller: 'StoreCtrl'
         resolve: auth: authenticateRoute
+        
+      # ACCOUNT AREA
+      .state "account",
+        url: "/account"
+        templateUrl: "<%= asset_path 'account/account.html' %>"
+        controller: 'AccountCtrl'
+        resolve: auth: authenticateRoute
+        
+      .state "account.settings",
+        url: "/settings"
+        templateUrl: "<%= asset_path 'account/settings.html' %>"
+        controller: 'AccountCtrl'
+      
+      .state "account.orders",
+        url: "/orders"
+        templateUrl: "<%= asset_path 'account/orders.html' %>"
+        controller: 'AccountCtrl'
+        
+      .state "account.profile",
+        url: "/profile"
+        templateUrl: "<%= asset_path 'account/profile.html' %>"
+        controller: 'AccountCtrl'
             
       # redirect invalid url routes to root
       $urlRouterProvider.otherwise '/'
+ 
+ 
+ 
+ 
+ 
  

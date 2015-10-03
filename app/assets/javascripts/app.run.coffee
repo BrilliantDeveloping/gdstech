@@ -9,7 +9,7 @@ angular.module "skeleton"
       $mdToast.show $mdToast.simple().content(
         toastContent).position(
         'top right'
-        ).hideDelay(3000)
+        ).hideDelay(1000)
         
     $rootScope.$on 'auth:login-success', (e, user) ->
       $state.go "main"

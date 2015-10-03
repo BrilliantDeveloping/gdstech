@@ -1,0 +1,32 @@
+angular.module "skeleton"
+  .directive 'sidepanel', ->
+    directive =
+      restrict: 'E'
+      scope: {}
+      template: '<br>
+        <md-sidenav flex class="md-sidenav-left md-whiteframe-z2" 
+          md-component-id="left" md-is-locked-open="'+"$mdMedia('gt-md')"+'">
+          <md-toolbar>
+            <h1 class="md-toolbar-tools">{{pageTitle}}</h1>
+          </md-toolbar>
+          <md-content>
+            <ul>
+              <li ng-repeat="item in panelItems">
+                <a ng-if="item.url" 
+                   ng-href="/#/{{item.url}}" 
+                   ng-bind="item.label">
+                </a>
+                <a ng-if="item.state" 
+                  ui-sref="{{item.state}}" 
+                  ng-bind="item.label">
+                </a>
+                <a ng-if="item.click" href=""
+                  ng-click="this[item.click](item.param)" 
+                  ng-bind="item.label">
+                </a>
+              </li>
+            </ul>
+          </md-content>
+        </md-sidenav> <br>'
+      controller: '@'
+      name: 'controller'

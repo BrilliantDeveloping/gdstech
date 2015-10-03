@@ -2,8 +2,12 @@ html {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.ng-scope {height:100%;}
+
+.fixed {position:fixed;}
+
 md-content {
-  margin-top:20px;
+  margin-top:0px;
 }
 
 h1,h2,h3,h4 {

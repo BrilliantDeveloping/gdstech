@@ -2,8 +2,6 @@ class V1::ChargesController < ApplicationController
   before_filter :authenticate_user!
   
   def create
-    Stripe.api_key = Figaro.env.stripe_api_key
-    
     user = current_user
     
     if user.customer_id.blank?
@@ -16,7 +14,10 @@ class V1::ChargesController < ApplicationController
         customer_id: customer.id,
         last4:       params[:last4]
       )
+    else
+      user.update_attributes(last4: params[:last4])
     end
+    
     charge = Stripe::Charge.create(
       customer:    user.customer_id,
       amount:      params[:total],
