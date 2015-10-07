@@ -1,10 +1,11 @@
 {
-  "name": "HelloIonic",
+  "name": "Skeleton",
   "private": "true",
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.1.0"
   },
   "dependencies": {
-    "ngCordova": "~0.1.20-alpha"
+    "ngCordova": "~0.1.20-alpha",
+    "angularjs-rails-resource": "~2.0.0"
   }
 }

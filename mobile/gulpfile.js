@@ -16,7 +16,7 @@ var paths = {
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
-  gulp.src('./www/css/**.scss')
+  gulp.src('./www/**/*.scss')
     .pipe(sass({ errLogToConsole: true}))
     .pipe(rename({ extname: '.css' }))
     .pipe(concat('style.css'))

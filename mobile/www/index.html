@@ -9,10 +9,10 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script src="lib/angularjs-rails-resource/angularjs-rails-resource.min.js"></script>
 
     <!-- your app's js -->
     <script src="js/application.js"></script>
@@ -23,9 +23,11 @@
       <ion-header-bar class="bar-stable">
         <h3 class="title">Skeleton Mobile</h3>
       </ion-header-bar>
+      
       <ion-content>
-        <h3>{{test}}</h1>
+        <div ui-view></div>
       </ion-content>
+      
     </ion-pane>
   </body>
 </html>
