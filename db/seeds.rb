@@ -8,32 +8,18 @@
   )
   Product.create(
     name: FFaker::Product.product_name,
-    price: rand(50..300)
+    price: rand(50..300),
+    image: "#{sprintf '%02d', rand(1..12)}.jpg"
   )
 end
 
 User.find_or_create_by(
-  email: 'user1@test.com'
+  email: 'demo@user.com'
   ) do |u|
-    u.name = 'Test User 1'
+    u.name = 'Demo User'
     u.password = 'password'
     u.password_confirmation = 'password'
 end
 
-User.find_or_create_by(
-  email: 'user2@test.com'
-  ) do |u|
-    u.name = 'Test User 2'
-    u.password = 'password'
-    u.password_confirmation = 'password'
-end
-
-User.find_or_create_by(
-  email: 'admin@test.com'
-  ) do |u|
-    u.name = 'Admin User'
-    u.password = 'password'
-    u.password_confirmation = 'password'
-end
 
 puts 'Seeded Database'

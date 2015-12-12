@@ -1,3 +1,5 @@
+$gds-green: #00b588;
+
 html {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -10,8 +12,25 @@ md-content {
   margin-top:0px;
 }
 
+.container {
+  max-width:1000px;
+  margin:0 auto;
+}
+
+.prime {
+  background:$gds-green;
+  position:absolute;
+  width:100%;
+  left:0;
+}
+
+md-toolbar {
+  border-bottom:0px #000 solid;
+}
+
 h1,h2,h3,h4 {
   font-weight:200!important;
+  color:#444;
 }
 
 a {
@@ -22,6 +41,11 @@ a {
   &:hover, &:focus {
     outline:0;
   }
+  &.help {
+    font-size:14px;
+    font-weight:bold;
+    color:$gds-green;
+  }
 }
 
 input::-moz-focus-inner { 
@@ -29,7 +53,7 @@ input::-moz-focus-inner {
 }
 
 hr {
-  border:0; height:1px; margin:0 15px;
+  border:0; height:1px; margin:0;
   background-image: 
     linear-gradient(to right, 
     rgba(100, 100, 100, 0.1), 
@@ -70,4 +94,8 @@ button.md-button {
 md-icon {
   position:relative;
   top:-2px;
+}
+
+md-whiteframe {
+  background: #fff;
 }

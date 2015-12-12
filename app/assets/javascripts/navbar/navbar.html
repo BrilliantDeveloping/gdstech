@@ -1,8 +1,8 @@
 <md-toolbar>
   <div class="md-toolbar-tools">
-    <a ui-sref="main">
-      <md-icon>apps</md-icon>Storefront
-    </a>
+    <span ui-sref="main" href="">
+      <md-icon>apps</md-icon>GDSTech
+    </span>
     <!-- fill up the space between left and right area -->
     <span flex></span>
     <md-button ng-repeat="nav in vm.neutral | orderBy:'order'" 
@@ -30,5 +30,3 @@
     </md-menu>
   </div>
 </md-toolbar>
-
-

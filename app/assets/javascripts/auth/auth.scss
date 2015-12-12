@@ -4,29 +4,30 @@ md-dialog {
   }
 }
 
-md-card {
-  max-width:380px;
-  margin:5px auto;
-  & h1 {
-    font-size:2.15em;
-    text-align:center;
-    margin-top:10px;
-    white-space:nowrap;
-  }
-}
-
-.auth-form {
-  min-width:350px;
-  margin-right:10px;
-  & md-input-container {
-    margin:0 15px;
-    padding-bottom: 20px;
-    & input.md-input {
-      line-height:30px;
+div.auth-container {
+  margin-top:50px;
+  & md-card {
+    max-width:380px;
+    margin:2px auto;
+    & h1 {
+      font-size:2.15em;
+      text-align:center;
+      margin-top:10px;
+      white-space:nowrap;
     }
   }
-}
-
-.other-links {
-  text-align:center;
+  & .auth-form {
+    min-width:350px;
+    margin-right:10px;
+    & md-input-container {
+      margin:0 15px;
+      padding-bottom: 20px;
+      & input.md-input {
+        line-height:30px;
+      }
+    }
+  }
+  & .other-links {
+    text-align:center;
+  }
 }

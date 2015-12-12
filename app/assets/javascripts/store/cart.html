@@ -1,13 +1,4 @@
-<h1>Products</h1>
-
-<div ng-repeat="product in products" class="gallery">
-  <h3>{{product.name}}</h3>
-  <p>{{product.image}} {{product.permalink}}</p>
-  <p>{{product.price | currency}}</p>
-  <md-button class="md-primary" ng-click="addToCart(product)">Add to cart</md-button>
-</div>
-
-<div ng-if="cart.length" class="shopping-cart">
+<div ng-if="cart.length" class="shopping-cart" ng-controller="StoreCtrl">
 			<h2>{{cart.length}} items in cart, ${{getCartPrice()}}</h2>
 
 			<span class="cart-item th radius" ng-repeat="product in cart">

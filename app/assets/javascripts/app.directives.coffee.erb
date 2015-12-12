@@ -1,0 +1,8 @@
+angular.module "skeleton"
+	.directive 'image', ->
+	  (scope, element, attrs) ->
+	    attrs.$observe 'image', (value) ->
+	      element.css
+	        'background-image': 'url(/assets/'+value+')'
+	      return
+	    return

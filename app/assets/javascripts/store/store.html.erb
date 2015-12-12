@@ -1,0 +1,25 @@
+<h1>GDS Products<hr/></h1>
+<br/>
+<div flex ng-cloak>
+  <md-grid-list
+      md-cols-sm="1" md-cols-md="4" md-cols-gt-md="8"
+      md-row-height-gt-md="1:1" md-row-height="4:3"
+      md-gutter="25px" md-gutter-gt-sm="25px" >
+    <md-grid-tile ng-repeat="p in products"
+        md-rowspan="2"
+        md-colspan="2"
+        md-colspan-sm="1"
+        class="md-whiteframe-2dp tile">
+      <md-grid-tile-header>
+        <h3>{{p.name}}</h3>
+      </md-grid-tile-header>
+      <div image="{{p.image}}"></div>
+      <md-grid-tile-footer>
+      <div layout="row" layout-align="space-between center">
+        <h3 class="price">{{p.price | currency}}</h3>
+        <md-button class="md-primary" ng-click="addToCart(product)">Add to cart</md-button>
+        </div>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+</div>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Storefront</title>
+  <title>GDSTech</title>
   <%= stylesheet_link_tag 'application', external_css, media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body ng-app="skeleton">
   <div layout="column" layout-fill>
     <div><navbar/></div>
-    <md-content>
-      <div ui-view></div>
+    <md-content layout-padding>
+      <div class="container" ui-view></div>
     </md-content>
   </div>
   <%= javascript_include_tag external_js, 'application' %>

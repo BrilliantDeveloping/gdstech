@@ -1,11 +1,35 @@
-.gallery {
-  margin:10px;
-  border:1px solid #ccc;
-  padding:15px;
-  border-radius:2px;
-  float:left;
-}
-
 .ng-invalid {
     color: red;
 }
+
+md-grid-list {
+	& md-grid-tile {
+		background:#fff;
+    overflow:hidden;
+		& md-grid-tile-header {
+      background:#fff;
+      border-bottom:1px $gds-green solid;
+      & figcaption {
+        width:100%;
+      }
+		}
+    & div[image]{
+      width:100%;
+      height:calc(100% - 48px);
+      margin-top:48px;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:contain;
+    }
+		& md-grid-tile-footer {
+      background:#f5f5f5;
+      & figcaption {
+      	width:100%;
+        & h3.price {
+          font-weight:bold!important;
+          color:#777;
+        }
+      }
+		}
+	}
+}		

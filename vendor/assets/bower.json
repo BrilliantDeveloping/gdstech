@@ -1,7 +1,7 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "angular": "1.4.4",
+    "angular": "1.4.8",
     "angular-animate": "latest",
     "angular-cookies": "latest",
     "angular-touch": "latest",
@@ -9,7 +9,7 @@
     "jquery": "2.1.4",
     "angular-ui-router": "0.2.15",
     "ng-token-auth": "0.0.28",
-    "angular-material": "0.10.1",
+    "angular-material": "latest",
     "angularjs-rails-resource": "2.0.0",
     "angular-payments": "latest"
   }

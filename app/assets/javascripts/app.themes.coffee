@@ -1,24 +1,24 @@
 angular.module "skeleton"
   .config ($mdThemingProvider) -> 
     
-    # Create custom palettes:
-#    $mdThemingProvider.definePalette 'gold',
-#      '50': '#fffde7'
-#      '100': '#fff9c4'
-#      '200': '#fff59d'
-#      '300': '#fff176'
-#      '400': '#ffee58'
-#      '500': '#ffd700'
-#      '600': '#fdd835'
-#      '700': '#fbc02d'
-#      '800': '#f9a825'
-#      '900': '#f57f17'
-#      'A100': '#ffff8d'
-#      'A200': '#ffff00'
-#      'A400': '#ffea00'
-#      'A700': '#ffd600'
-#      'contrastDefaultColor': 'dark'
+   #  Create custom palettes:
+   $mdThemingProvider.definePalette 'gds-green',
+     '50': '#00b588'
+     '100': '#00b588'
+     '200': '#00b588'
+     '300': '#00b588'
+     '400': '#00b588'
+     '500': '#00b588'
+     '600': '#00b588'
+     '700': '#00b588'
+     '800': '#00b588'
+     '900': '#00b588'
+     'A100': '#00b588'
+     'A200': '#00b588'
+     'A400': '#00b588'
+     'A700': '#00b588'
+     'contrastDefaultColor': 'light'
       
-    # Change default theme:  
-#    $mdThemingProvider.theme('default')
-#      .primaryPalette 'gold'
+   # Change default theme:  
+   $mdThemingProvider.theme('default')
+     .primaryPalette 'gds-green'
