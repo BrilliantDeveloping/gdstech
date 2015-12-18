@@ -1,11 +1,20 @@
-<h1>GDS Products<hr/></h1>
-<br/>
-<div flex ng-cloak>
+<div layout="row" layout-align="space-between end">
+  <div flex>
+    <h1>GDS Products</h1>
+  </div>
+  <div flex="33">
+    <md-input-container md-no-float class="md-icon-float md-icon-right md-block">
+      <input ng-model="search" placeholder="Search">
+      <md-icon>search</md-icon>
+    </md-input-container>
+  </div>
+</div>
+<div ng-cloak>
   <md-grid-list
       md-cols-sm="1" md-cols-md="4" md-cols-gt-md="8"
       md-row-height-gt-md="1:1" md-row-height="4:3"
       md-gutter="25px" md-gutter-gt-sm="25px" >
-    <md-grid-tile ng-repeat="p in products"
+    <md-grid-tile ng-repeat="p in products | filter:search"
         md-rowspan="2"
         md-colspan="2"
         md-colspan-sm="1"
