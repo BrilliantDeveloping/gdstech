@@ -1,11 +1,53 @@
 angular.module "skeleton"
   .directive 'navbar', ->
 
-    NavbarController = ($auth) ->
+    NavbarCtrl = ($auth, $scope, $timeout, $mdSidenav, $log) ->
       vm = this
+      
+      debounce = (func, wait, context) ->
+        timer = undefined
+        ->
+          `var context`
+          context = $scope
+          args = Array::slice.call(arguments)
+          $timeout.cancel timer
+          timer = $timeout((->
+            timer = undefined
+            func.apply context, args
+            return
+          ), wait or 10)
+          return
+
+      buildDelayedToggler = (navID) ->
+        debounce (->
+          $mdSidenav(navID).toggle().then ->
+            $log.debug 'toggle ' + navID + ' is done'
+            return
+          return
+        ), 200
+
+      buildToggler = (navID) ->
+        ->
+          $mdSidenav(navID).toggle().then ->
+            $log.debug 'toggle ' + navID + ' is done'
+            return
+          return
+
+      $scope.toggleLeft = buildDelayedToggler('left')
+      $scope.toggleRight = buildToggler('right')
+
+      $scope.isOpenRight = ->
+        $mdSidenav('right').isOpen()
+
+      $scope.close = ->
+        $mdSidenav('right').close().then ->
+          $log.debug 'close RIGHT is done'
+          return
+        return
+
       vm.neutral = [
         {
-          link: 'Posts'
+          link: 'Blog'
           state: 'posts'
           order: 1
         }
@@ -46,9 +88,11 @@ angular.module "skeleton"
       ]
       return
 
+
     directive =
       restrict: 'E'
       templateUrl: "<%= asset_path 'navbar/navbar.html' %>"
-      controller: NavbarController
+      controller: NavbarCtrl
       controllerAs: 'vm'
-      bindToController: true
+      bindToController: false
+      scope: true

@@ -1,12 +1,13 @@
 Stripe.setPublishableKey("<%= Figaro.env.stripe_publishable_key %>")
 
 angular.module "skeleton"
-  .controller "StoreCtrl", ($scope, Product, $mdDialog) ->
+
+  .controller "StoreCtrl", ($scope, Product, $mdDialog, $rootScope) ->
     Product.query().then (products) -> $scope.products = products
     
-    $scope.cart = []
+    $rootScope.cart = []
 
-    $scope.addToCart = (product) ->
+    $rootScope.addToCart = (product) ->
       found = false
       $scope.cart.forEach (item) ->
         if item.id == product.id
@@ -17,22 +18,25 @@ angular.module "skeleton"
         $scope.cart.push angular.extend({ quantity: 1 }, product)
       return
 
-    $scope.getCartPrice = ->
+    $rootScope.getCartPrice = ->
       total = 0
       $scope.cart.forEach (product) ->
         total += product.price * product.quantity
         return
       total
 
-    $scope.checkout = ->
+    $rootScope.checkout = ->
       $mdDialog.show
         templateUrl: "<%= asset_path 'store/checkout.html' %>"
         controller: 'CheckoutCtrl'
         resolve: totalAmount: $scope.getCartPrice
       return
 
-    return
+    $rootScope.clearCart = ->
+      $rootScope.cart = []
+      return
 
+    return
 
 
   .controller 'CheckoutCtrl', ($scope, $state, totalAmount, $mdDialog, $http, $filter) ->

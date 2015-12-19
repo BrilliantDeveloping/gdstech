@@ -39,6 +39,13 @@ h1,h2,h3,h4 {
   color:#444;
 }
 
+h1.md-toolbar-tools {
+  color:#fff;
+  & a {
+    font-size:34px;
+  }
+}
+
 a {
   &:link, &:active, &:visited {
     text-decoration:none;

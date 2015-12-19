@@ -1,0 +1,20 @@
+md-sidenav {
+  & md-content {
+    & img[thumbnail] {
+      border-radius: 30px;
+      border: 1px solid #ddd;
+      width: 48px;
+      height: auto;
+      margin: 16px;
+    }
+    & md-toolbar {
+      &.actions {
+        background-color:#aaa;
+        padding:10px 0 10px 10px;
+        position:fixed;
+        bottom:0;
+        font-weight:bold;
+      }
+    }
+  }
+}

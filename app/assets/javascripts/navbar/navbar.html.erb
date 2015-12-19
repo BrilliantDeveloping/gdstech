@@ -1,0 +1,73 @@
+<!-- Main Nav -->
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <span ui-sref="main" href="">
+      <md-icon>apps</md-icon>GDSTech
+    </span>
+
+    <span flex></span>
+    <md-button ng-repeat="nav in vm.neutral | orderBy:'order'" 
+      ui-sref-active="active" ui-sref="{{nav.state}}">
+      <span ng-bind="nav.link"></span>
+    </md-button>
+
+    <md-button class="md-icon-button" 
+        ng-click="toggleRight()" 
+        ng-hide="isOpenRight()">
+      <md-icon>shopping_cart</md-icon> 
+      <span ng-if="cart.length">{{cart.length}}</span>
+    </md-button>
+
+    <md-button ng-repeat="nav in vm.unauthorized | orderBy:'order'" 
+      ui-sref-active="active" ui-sref="{{nav.state}}"
+      ng-if="!user.signedIn"><span ng-bind="nav.link"></span>
+    </md-button>
+
+    <md-menu ng-if="user.signedIn">
+      <md-button ng-click="$mdOpenMenu($event)" 
+          class="md-icon-button" 
+          md-position-mode="target-right target" 
+          aria-label="Open sample menu">
+        <md-icon>account_circle</md-icon>
+      </md-button>
+      <md-menu-content>
+        <md-menu-item ng-repeat="nav in vm.authorized | orderBy:'order'" 
+          ui-sref-active="active" ui-sref="{{nav.state}}">
+          <md-button>
+            <md-icon>{{nav.icon}}</md-icon>
+            <span ng-bind="nav.link"></span>
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</md-toolbar>
+
+<!--  Cart -->
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right">
+  <md-toolbar class="md-theme-light">
+    <h1 class="md-toolbar-tools">
+      <md-icon>shopping_cart</md-icon>
+      <span flex></span>
+      <a>$ {{getCartPrice()}}</a>
+    </h1>
+  </md-toolbar>
+  <md-content>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="item in cart">
+        <img thumbnail ng-src="/assets/{{item.image}}">
+        <div class="md-list-item-text">
+          <h3>{{item.name}}</h3>
+          <h4>{{item.name}}</h4>
+          <p>Quantity: {{item.quantity}}</p>
+        </div>
+        <!-- <md-button class="md-secondary">Respond</md-button> -->
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+    <md-toolbar class="actions md-secondary">
+      <md-button ng-click="close(); checkout()" class="md-primary md-raised">Checkout</md-button>
+      <md-button ng-click="clearCart()">Clear Cart</md-button>
+    </md-toolbar>
+  </md-content>
+</md-sidenav>
