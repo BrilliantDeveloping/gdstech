@@ -1,19 +1,20 @@
 <!-- Main Nav -->
 <md-toolbar>
-  <div class="md-toolbar-tools">
-    <span ui-sref="main" href="">
-      <md-icon>apps</md-icon>GDSTech
+  <div class="md-toolbar-tools navbar">
+    <span ui-sref="main">
+      <md-icon href="#">apps</md-icon>
+      <span href="#">GDSTech</span>
     </span>
 
     <span flex></span>
     <md-button ng-repeat="nav in vm.neutral | orderBy:'order'" 
-      ui-sref-active="active" ui-sref="{{nav.state}}">
+      ui-sref-active="active" ui-sref="{{nav.state}}"
+      ng-hide="isOpenRight()">
       <span ng-bind="nav.link"></span>
     </md-button>
 
     <md-button class="md-icon-button" 
-        ng-click="toggleRight()" 
-        ng-hide="isOpenRight()">
+        ng-click="toggleRight()" o>
       <md-icon>shopping_cart</md-icon> 
       <span ng-if="cart.length">{{cart.length}}</span>
     </md-button>
@@ -25,10 +26,11 @@
 
     <md-menu ng-if="user.signedIn">
       <md-button ng-click="$mdOpenMenu($event)" 
-          class="md-icon-button" 
-          md-position-mode="target-right target" 
-          aria-label="Open sample menu">
-        <md-icon>account_circle</md-icon>
+        class="md-icon-button" 
+        md-position-mode="target-right target" 
+        aria-label="Open sample menu">
+        <md-icon account>account_circle</md-icon>
+        <md-tooltip>{{user.email}}</md-tooltip>
       </md-button>
       <md-menu-content>
         <md-menu-item ng-repeat="nav in vm.authorized | orderBy:'order'" 
