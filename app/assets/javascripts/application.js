@@ -12,4 +12,5 @@
 //= require ng-token-auth/dist/ng-token-auth
 //= require angularjs-rails-resource/angularjs-rails-resource
 //= require angular-payments/lib/angular-payments
+//= require angular-youtube-mb/dist/angular-youtube-embed.min
 //= require_tree .

@@ -8,10 +8,13 @@
 <body ng-app="skeleton">
   <div layout="column" layout-fill>
     <div><navbar/></div>
-    <md-content layout-padding view>
+    <div ui-view ng-if="$state.current.name == 'main'"></div>
+    <md-content layout-padding view 
+      ng-if="$state.current.name != 'main'">
       <div class="container" ui-view></div>
     </md-content>
   </div>
   <%= javascript_include_tag external_js, 'application' %>
+  <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>

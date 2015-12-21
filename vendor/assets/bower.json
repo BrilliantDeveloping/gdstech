@@ -11,6 +11,7 @@
     "ng-token-auth": "0.0.28",
     "angular-material": "latest",
     "angularjs-rails-resource": "2.0.0",
-    "angular-payments": "latest"
+    "angular-payments": "latest",
+    "angular-youtube-mb": "latest"
   }
 }

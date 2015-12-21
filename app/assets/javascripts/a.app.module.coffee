@@ -9,4 +9,5 @@ angular.module "skeleton", [
   'templates'
   'ng-token-auth'
   'angularPayments'
+  'youtube-embed'
 ]

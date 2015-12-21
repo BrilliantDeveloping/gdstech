@@ -16,16 +16,12 @@ md-content {
   }
 }
 
-.section {
-  position:absolute;
-  width:100%;
-  left:0;
-  &.prime {
-    background:$gds-green;
-  }
-  &.light {
-    background:$light;
-  }
+.prime {
+  background:$gds-green;
+  padding:20px 0;
+}
+.light {
+  background:$light;
 }
 
 .container {
@@ -39,10 +35,20 @@ h1,h2,h3,h4 {
   color:#444;
 }
 
-h1.md-toolbar-tools {
-  color:#fff;
-  & a {
-    font-size:34px;
+h1 {
+  &.billboard {
+    font-size:44px;
+    color:#555;
+    & span {
+      font-size:30px;
+      color:#999;
+    }
+  }
+  &.md-toolbar-tools {
+    color:#fff;
+    & a {
+      font-size:34px;
+    }
   }
 }
 
