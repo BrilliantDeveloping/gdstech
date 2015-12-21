@@ -22,7 +22,7 @@
       <md-grid-tile-header>
         <h3>{{p.name}}</h3>
       </md-grid-tile-header>
-      <div image="{{p.image}}"></div>
+      <div image="<%= asset_path('{{p.image}}').split('/').last %>"></div>
       <md-grid-tile-footer>
       <div layout="row" layout-align="space-between center">
         <h3 class="price">{{p.price | currency}}</h3>
